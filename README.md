@@ -1,9 +1,9 @@
 # Assignment One
 
-> **qualification:** Pearson BTEC Level 3 National Foundation Diploma in Information Technology
-> **unit:** 6 
-> **title:** Website Development
-> **deadline:** 12/01/2024
+> **qualification:** Pearson BTEC Level 3 National Foundation Diploma in Information Technology  
+**unit:** 6   
+**title:** Website Development  
+**deadline:** 12/01/2024
 
 ---
 
