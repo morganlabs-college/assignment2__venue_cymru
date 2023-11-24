@@ -11,3 +11,5 @@ In this assignment, I have been asked to create a website for Venue Clwyd, a cli
 
 The assignment brief can be found [here](./materials/assignment_brief.pdf).
 
+Designs for the mobile and desktop website can be found [here](./designs).
+
