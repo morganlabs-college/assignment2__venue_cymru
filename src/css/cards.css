@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+}
+.card .secondary {
+  font-weight: 500;
+}
+.card.hero {
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  color: #E9EAF4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 30px;
+}
+.card.hero .small-info {
+  text-transform: uppercase;
+}
+.card.hero .action-row {
+  margin-top: 2rem;
+}
+.card .background {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  border-radius: 10px;
+}
+.card .gradient {
+  width: 100%;
+  height: 75%;
+  border-radius: 0 0 10px 10px;
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  background: #07091C;
+  background: linear-gradient(0deg, #07091c 0%, rgba(7, 9, 28, 0) 100%);
+  z-index: -1;
+}
+
+/*# sourceMappingURL=cards.css.map */

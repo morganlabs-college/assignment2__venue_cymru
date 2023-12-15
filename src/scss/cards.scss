@@ -1,0 +1,53 @@
+@use "vars" as *;
+
+.card {
+    position: relative;
+
+    & .secondary {
+        font-weight: 500;
+    }
+
+    &.hero {
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        color: $white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        padding: 40px 30px;
+
+        .small-info {
+            text-transform: uppercase;
+        }
+
+        .action-row {
+            margin-top: 2rem;
+        }
+    }
+
+    .background {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        border-radius: 10px;
+    }
+    
+    .gradient {
+        width: 100%;
+        height: 75%;
+        border-radius: 0 0 10px 10px;
+        aspect-ratio: 16/9;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        background: $black;
+        background: linear-gradient(0deg, rgba($black, 1) 0%, rgba($black, 0) 100%);
+        z-index: -1;
+    }
+}
