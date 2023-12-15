@@ -68,4 +68,38 @@
   display: flex;
 }
 
+@media (min-width: 1104px) {
+  .nav {
+    bottom: auto;
+    top: 0;
+    box-shadow: 0 2px 0 rgba(7, 9, 28, 0.25);
+    grid-template-rows: 5.25rem;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .nav .mobile {
+    display: none;
+  }
+  .nav .desktop {
+    display: block;
+  }
+  .nav .logos {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0;
+    margin-left: 12px;
+    margin-top: 5px;
+  }
+  .nav .logos .desktop {
+    height: 56px;
+    width: auto;
+  }
+  .nav .links {
+    grid-row: 1;
+    grid-column: 2;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 /*# sourceMappingURL=navbar.css.map */
