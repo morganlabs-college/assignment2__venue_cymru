@@ -74,6 +74,7 @@ function parseType(type) {
     switch (type) {
         case "MUS": return "Musical";
         case "FIL": return "Film";
+        case "THE": return "Theatre";
     }
 }
 
