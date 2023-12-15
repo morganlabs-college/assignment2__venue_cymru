@@ -1,8 +1,21 @@
 .card {
   position: relative;
 }
+.card .seperator {
+  display: block;
+  background-color: rgba(233, 234, 244, 0.25);
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+}
 .card .secondary {
   font-weight: 500;
+}
+.card .small-info {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 0.25rem;
 }
 .card.hero {
   aspect-ratio: 16/9;
@@ -13,20 +26,28 @@
   justify-content: flex-end;
   padding: 40px 30px;
 }
-.card.hero .small-info {
-  text-transform: uppercase;
-}
 .card.hero .action-row {
   margin-top: 2rem;
 }
-.card .background {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
+.card.hero .image {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -2;
+}
+.card.small *:not(.primary) {
+  color: #07091C;
+}
+.card.small .action-row {
+  margin-top: 1.5rem;
+}
+.card.small .seperator {
+  background-color: rgba(7, 9, 28, 0.25);
+}
+.card .image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
   border-radius: 10px;
 }
 .card .gradient {
@@ -40,6 +61,13 @@
   background: #07091C;
   background: linear-gradient(0deg, #07091c 0%, rgba(7, 9, 28, 0) 100%);
   z-index: -1;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=cards.css.map */

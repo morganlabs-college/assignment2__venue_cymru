@@ -2,9 +2,24 @@
 
 .card {
     position: relative;
+    
+    .seperator {
+        display: block;
+        background-color: rgba($white, 0.25);
+        width: 3px;
+        height: 3px;
+        border-radius: 9999px;
+    }
 
-    & .secondary {
+    .secondary {
         font-weight: 500;
+    }
+
+    .small-info {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        gap: 0.25rem;
     }
 
     &.hero {
@@ -18,23 +33,35 @@
 
         padding: 40px 30px;
 
-        .small-info {
-            text-transform: uppercase;
-        }
 
         .action-row {
             margin-top: 2rem;
         }
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
     }
 
-    .background {
+    &.small {
+        *:not(.primary) { color: $black; }
+
+        .action-row {
+            margin-top: 1.5rem;
+        }
+
+        .seperator {
+            background-color: rgba($black, 0.25);
+        }
+    }
+
+    .image {
         width: 100%;
         height: auto;
         aspect-ratio: 16/9;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
         border-radius: 10px;
     }
     
@@ -50,4 +77,11 @@
         background: linear-gradient(0deg, rgba($black, 1) 0%, rgba($black, 0) 100%);
         z-index: -1;
     }
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
 }
