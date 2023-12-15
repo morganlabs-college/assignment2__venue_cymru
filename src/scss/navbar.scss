@@ -93,7 +93,7 @@
     .nav {
         bottom: auto;
         top: 0;
-        box-shadow: 0 2px 0 rgba($black, 0.25);
+        box-shadow: none;
 
         grid-template-rows: 5.25rem;
         grid-template-columns: 1fr auto 1fr;
