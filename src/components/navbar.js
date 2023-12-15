@@ -1,5 +1,12 @@
 class Navbar extends HTMLElement {
+    static get observedAttributes() {
+        return ["active-page-title"]
+    }
+
     connectedCallback() {
+        // Get the path from the src/ directory
+        // This is so that we can use this variable no matter where in the file
+        // structure we are, we can get to the src directory
         let wholePath = window.location.pathname.split("/");
         wholePath.splice(wholePath.indexOf("src") + 1);
         const pathFromSrc = wholePath.join("/");
@@ -15,6 +22,8 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
             <nav class="nav" id="nav">
                 <div class="logos">
+                    <!-- Here, we are using ${pathFromSrc} so that we can --> 
+                    <!-- the svg images absolutely from the src directory! -->
                     <img src="${pathFromSrc}/assets/logos/submark.svg" class="mobile"></img>
                     <img src="${pathFromSrc}/assets/logos/wordmark.svg" class="desktop"></img>
                 </div>
@@ -24,28 +33,49 @@ class Navbar extends HTMLElement {
                     <span class="line"></span>
                 </button>
                 <ul class="links">
+                    <!-- All of the pages from the array are here -->
                     ${pages}
                 </ul>
             </nav>
-        `;
+                `;
 
+        // Add functionality to the hamburger menu
         const nav = document.getElementById("nav");
         const hamburgerMenu = document.getElementById("hamburger");
 
         hamburgerMenu.addEventListener("click", () => {
             nav.classList.toggle("open");
         });
+
+        window.addEventListener("resize", (x) => {
+            // Auto-close navbar if inner side fits desktop size
+            if (window.innerWidth > 1104) nav.classList.remove("open");
+        })
     }
 
     parsePages(pages, pathFromSrc) {
         let parsed = [];
 
+        const manualPageTitle = this.getAttribute("active-page-title");
+
+        function isPageActive(title, absoluteHref) {
+            // If an active page is specified manually, that takes priority
+            if (manualPageTitle) return manualPageTitle === title
+            return window.location.pathname === absoluteHref;
+        }
+
         for (const { title, href } of pages) {
+            // Concatenate the absolute path from `src/` with the page href 
+            // location, and remove "./" if applicable
             const absoluteHref = `${pathFromSrc}${href.replace("./", "/")}`;
 
+
+            // Add the formatted HTML to the array
+            // If the page is active, it has the primary class
+            // else it has the secondary class
             parsed.push(`
-                <li class="container cmp-btn ${window.location.pathname === absoluteHref ? "primary" : "secondary"}">
-                <a href="${absoluteHref}" class="link">${title}</a>
+                <li class="container cmp-btn ${isPageActive(title, absoluteHref) ? "primary" : "secondary"}" >
+                    <a href="${absoluteHref}" class="link">${title}</a>
                 </li>
             `)
         }
