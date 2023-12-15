@@ -15,11 +15,12 @@ class Navbar extends HTMLElement {
             // All of these are RELATIVE from the src/ directory
             { title: "Home", href: "./index.html" },
             { title: "About", href: "./about/index.html" },
-            { title: "What's On", href: "./#" },
-            { title: "What's Available", href: "./#" },
+            { title: "What's On", href: "./whats-on/index.html" },
+            { title: "What's Available", href: "./whats-available/index.html" },
         ], pathFromSrc);
 
         this.innerHTML = `
+            <link rel="stylesheet" href="./css/navbar.css">
             <nav class="nav" id="nav">
                 <div class="logos">
                     <!-- Here, we are using ${pathFromSrc} so that we can --> 
@@ -37,7 +38,7 @@ class Navbar extends HTMLElement {
                     ${pages}
                 </ul>
             </nav>
-                `;
+        `;
 
         // Add functionality to the hamburger menu
         const nav = document.getElementById("nav");
@@ -68,7 +69,6 @@ class Navbar extends HTMLElement {
             // Concatenate the absolute path from `src/` with the page href 
             // location, and remove "./" if applicable
             const absoluteHref = `${pathFromSrc}${href.replace("./", "/")}`;
-
 
             // Add the formatted HTML to the array
             // If the page is active, it has the primary class
