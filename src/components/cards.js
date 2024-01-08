@@ -55,10 +55,12 @@ class Small extends HTMLElement {
         this.innerHTML = `
             <article class="card small">
                 <img class="image" src="${image}" alt="Hero image for ${title}">
-               <div class="small-info">
-                    <span class="type">${type}</span>
-                    <span class="seperator"></span>
-                    <span class="location">${location}</span>
+                <div class="upper-container">
+                   <div class="small-info">
+                        <span class="type">${type}</span>
+                        <span class="seperator"></span>
+                        <span class="location">${location}</span>
+                    </div>
                 </div>
                 <h2>${title}</h2>
                 <div class="action-row">

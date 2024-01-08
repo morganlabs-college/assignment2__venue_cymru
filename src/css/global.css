@@ -67,6 +67,7 @@ a:active, a:hover {
 
 /* Components */
 button, .cmp-btn {
+  display: inline-block;
   background: none;
   font-size: 1.35rem;
   font-weight: 700;
@@ -84,6 +85,7 @@ button.primary, .cmp-btn.primary {
   transition: 0.25s ease-in-out;
 }
 button.primary:hover, .cmp-btn.primary:hover {
+  font-weight: 700;
   box-shadow: 0 8px 16px rgba(60, 67, 230, 0.5);
   transform: translateY(-4px);
 }
@@ -94,6 +96,7 @@ button.secondary, .cmp-btn.secondary {
   color: #E9EAF4;
 }
 button.secondary:hover, .cmp-btn.secondary:hover {
+  font-weight: 700;
   border: 4px solid #3C43E6;
 }
 

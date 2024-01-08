@@ -48,7 +48,7 @@ class Navbar extends HTMLElement {
             nav.classList.toggle("open");
         });
 
-        window.addEventListener("resize", (x) => {
+        window.addEventListener("resize", (_) => {
             // Auto-close navbar if inner side fits desktop size
             if (window.innerWidth > 1104) nav.classList.remove("open");
         })

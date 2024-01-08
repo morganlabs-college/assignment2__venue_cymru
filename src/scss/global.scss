@@ -54,6 +54,7 @@ a {
 
 /* Components */
 button, .cmp-btn {
+    display: inline-block;
     background: none;
     font-size: 1.35rem;
     font-weight: 700;
@@ -71,6 +72,7 @@ button, .cmp-btn {
         transition: 0.25s ease-in-out;
 
         &:hover {
+            font-weight: 700;
             box-shadow: 0 8px 16px rgba($accent, 0.5);
             transform: translateY(-4px);
         }
@@ -83,6 +85,7 @@ button, .cmp-btn {
         color: $white;
 
         &:hover {
+            font-weight: 700;
             border: 4px solid $accent;
         }
     }
